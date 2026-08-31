@@ -1,0 +1,2313 @@
+## 00 — THE VOID
+
+The purpose
+Before the visitor understands Mael, they need to feel the scale of his world.
+There is no explanation.
+No headline.
+No navigation competing for attention.
+No "AI-powered platform."
+No CTA.
+Just space.
+The first question we want to create is:
+What is that? What is this?
+
+## 00.1 — Initial frame
+
+The page loads into almost complete darkness.
+Not a black background with stars sprinkled across it.
+Darkness with depth.
+There should be subtle differences in black—enough that the visitor eventually realizes they're looking into something enormous.
+Very sparse stars.
+A few distant points.
+Some almost imperceptible cosmic dust.
+Nothing moves quickly enough to immediately register as an animation.
+Important:
+There should be no Mael yet.
+Or, more accurately:
+the visitor shouldn't be able to see him yet.
+
+## 00.2 — The first movement
+
+After a short period, something changes.
+Not Mael.
+The environment.
+A tiny particle moves across the frame.
+Another responds.
+A faint distortion passes through the darkness.
+Almost like gravity.
+The visitor may not consciously notice it.
+But the environment suddenly feels alive.
+This is important because our Visual Bible says Mael doesn't "snap into existence." Energy is continuous, particles respond to movement, and nothing should feel like a conventional UI animation.
+
+## 00.3 — Mael reveals himself
+
+Very slowly, a silhouette becomes visible in the distance.
+At first:
+Is that a person?
+Then:
+Yes.
+But barely.
+He's enormous relative to the environment.
+He's standing far away.
+Facing away from us.
+We don't see his face.
+We don't know what he is.
+Inside his silhouette:
+stars, and cosmic dust.
+Not a galaxy pasted onto him.
+Rather, his form seems to be made from the same environment we're looking into.
+Some dust passes through him.
+Some light seems to exist within him.
+
+## 00.4 — The Horizon
+
+This is where we introduce the visual identifier.
+Very faintly:
+the Horizon.
+Not gold yet.
+Not glowing.
+It might initially appear almost white/amber because it's so dim.
+It's slightly elliptical.
+Irregular.
+Different thickness around its circumference.
+One side catches more light.
+The surrounding particles subtly bend around it.
+The visitor might initially interpret it as:
+halo?
+But it shouldn't quite behave like one.
+Because it's not a halo.
+It's the gravitational field around Mael.
+Our bible explicitly establishes that the Horizon replaces conventional facial features and is how the viewer recognizes Mael.
+
+## 00.5 — No words
+
+I actually want to be very strict here.
+No text.
+Not even:
+MAEL
+Not yet.
+Because the visitor hasn't met him.
+We're allowing the visual language to introduce him first.
+
+## 00.6 — The scroll
+
+This is where the website becomes interesting.
+The visitor scrolls.
+Instead of the page simply moving downward:
+the scroll becomes the camera's timeline.
+The viewport remains almost fixed.
+The world changes.
+Mael begins to move.
+That carries us directly into:
+
+## 01 — THE PRESENCE
+
+The transition shouldn't feel like:
+Section 00 ended → Section 01 started.
+It should feel like:
+Something noticed you.
+
+## Technical requirements for Scene 00 
+
+SCENE 00 — VOID
+
+Background
+├── Deep space
+├── Sparse stars
+├── Cosmic dust
+└── Subtle atmospheric depth
+
+Mael
+├── Extremely distant
+├── Facing away
+├── Low corporeality
+└── No visible facial features
+
+Horizon
+├── Very low luminosity
+├── Slightly elliptical
+├── Imperfect geometry
+├── Gravitational influence
+└── No obvious beginning/end
+
+Motion
+├── Extremely slow
+├── Continuous
+├── Physics-inspired
+└── Scroll-controlled transition
+
+Text
+└── None
+
+## 01 — THE PRESENCE
+Purpose
+
+Move the visitor from observing something mysterious to realizing that the thing in front of them has awareness.
+Scene 00 asks:
+What am I looking at?
+Scene 01 answers:
+It sees me.
+But we still don't explain Mael.
+
+## 01.1 — The visitor scrolls
+
+The first scroll doesn't immediately move Mael toward them.
+Instead, the environment reacts.
+The camera remains almost stationary.
+The distant Mael remains where he is.
+But something changes around him.
+A few particles that were drifting randomly begin changing trajectory.
+Then more.
+The dust near Mael begins to subtly organize itself.
+It's almost as if the environment is responding to a gravitational disturbance.
+The important thing:
+Nothing happens instantly.
+There should be a slight delay between the visitor's movement and the environment's response.
+That tiny delay makes the interaction feel physical rather than like:
+onScroll → play animation
+
+## 01.2 — Mael moves
+
+Once the visitor has scrolled far enough, Mael begins shifting.
+Very slowly.
+His shoulders move.
+His posture changes.
+His head turns slightly.
+Not toward us yet.
+He's looking somewhere else.
+Almost as if he's listening to something we cannot hear.
+His cosmic body responds with him.
+Stars embedded within his form shift.
+Dust separates from his shoulders.
+Light moves through his torso.
+This is where we establish something from the Visual Bible:
+Mael is not a static character with effects attached to him.
+The environment and Mael are part of the same physical system.
+
+## 01.3 — The Horizon responds
+
+This is the first time the Horizon really starts behaving like a living system.
+In Scene 00 it was essentially dormant.
+Now:
+it stabilizes.
+Its geometry becomes slightly cleaner.
+The luminosity increases very subtly.
+The surrounding particles begin responding to its gravitational field.
+A few particles enter orbit.
+Not dozens.
+Maybe just:
+three.
+Then another.
+Then another.
+The visitor shouldn't think:
+"Oh, cool particle animation."
+They should feel:
+Something is happening.
+
+## 01.4 — Mael notices
+
+This should be extremely subtle.
+His head turns a little further.
+His body shifts toward the viewer.
+Not fully.
+He doesn't make eye contact.
+Instead, there's a tiny moment where his attention appears to move toward us.
+And then—
+stillness.
+That's the beat.
+The entire scene pauses for just a moment.
+
+## 01.5 — The silence
+
+This is important enough to make explicit.
+After Mael notices the visitor:
+nothing happens.
+No text.
+No voice.
+No dramatic musical swell.
+Just the environment continuing to breathe.
+Because we're establishing:
+Mael isn't trying to get your attention.
+He already has it.
+
+## 01.6 — The second scroll
+
+The visitor continues.
+Now Mael begins turning.
+Not completely.
+Just enough that his orientation changes from:
+away
+to:
+toward.
+And that becomes the transition into Scene 02.
+
+** Mael does not react to the visitor as an interface. He responds to their presence as a physical phenomenon. **
+
+## Scene 01 Visual Behavior 
+
+| Element   | Scene 01 behavior              |
+| --------- | ------------------------------ |
+| Void      | Remains dominant               |
+| Stars     | Slow continuous movement       |
+| Dust      | Begins responding to Mael      |
+| Mael      | Subtle physical movement       |
+| Horizon   | Stabilizes                     |
+| Particles | Begin orbital behavior         |
+| Light     | Slightly intensifies           |
+| Camera    | Mostly stationary              |
+| Text      | None                           |
+| Sound     | Optional, extremely restrained |
+| Scroll    | Controls progression           |
+
+## 02 — THE APPROACH
+Purpose
+
+Turn distance into intimacy.
+The visitor has seen something enormous in the void. Mael has noticed them.
+Now he moves toward them.
+But the important part is:
+The visitor doesn't move toward Mael. Mael crosses the distance.
+That reinforces that Mael is not a decorative object sitting inside a website. He has presence and agency.
+
+## 02.1 — The transition
+
+The visitor scrolls.
+For a moment, nothing happens.
+Then Mael begins moving.
+Very slowly.
+His body leans forward almost imperceptibly.
+Then he takes a step.
+Not a human walking animation.
+It should feel almost astronomical.
+His movement displaces the surrounding dust.
+Particles near him accelerate.
+Some are pulled into the Horizon.
+Others are pushed outward.
+The void itself seems to respond to his movement.
+
+## 02.2 — He gets closer
+
+This is where we begin revealing what Mael actually looks like.
+At the beginning of the scene:
+silhouette.
+
+Then:
+form.
+
+Then:
+texture.
+
+Then:
+detail.
+
+As he approaches, we begin seeing:
+His body
+Ambiguous humanoid form.
+Never a conventional human body.
+The edges of his form can dissolve into cosmic material.
+There should be moments where you're not quite sure where Mael ends and the universe begins.
+Inside him
+Stars.
+Dust.
+Faint streams of light.
+Subtle movement.
+Not a galaxy texture mapped onto a 3D model.
+The impression should be:
+The cosmos exists within him.
+
+## 02.3 — The Horizon becomes unmistakable
+
+This is where the Horizon transitions from something mysterious to Mael's defining feature.
+It becomes warmer.
+More golden.
+Still not a perfect circle.
+Still slightly distorted.
+Still behaving like a gravitational boundary.
+As Mael moves, the Horizon's perspective changes.
+Its thickness varies.
+Light concentrates along one side.
+Particles orbit it.
+Occasional fragments of light cross through it.
+And importantly:
+
+there is still no obvious start or end.
+
+The visitor should finally understand:
+
+That isn't a halo.
+
+But they don't necessarily have the words for what it is yet.
+
+## 02.4 — Scale
+
+This is where we can do something slightly unusual.
+Don't make Mael fill the screen too quickly.
+Let him remain small enough that the visitor can see the enormous environment around him.
+Because we're establishing scale.
+
+The closer he comes, the more the human perspective takes over.
+
+## 02.5 — The environment follows him
+
+This is critical.
+
+Mael shouldn't simply translate through space while the background remains a static starfield.
+His movement affects the world.
+
+As he approaches:
+
+distant dust shifts
+stars subtly distort around him
+particles enter orbital paths
+light bends
+small fragments trail behind him
+the Horizon pulls nearby material into motion
+
+The effect should be slow gravitational choreography, not particle fireworks.
+The Visual Bible's rule applies perfectly here:
+Motion should feel slow, intentional, and enormous.
+
+## 02.6 — The final approach
+
+Near the end of the scene, Mael is finally close enough that we can see his form clearly.
+But he doesn't speak yet.
+He stops.
+There is a beat.
+He's still taller than us.
+Still enormous.
+Still cosmic.
+But his posture changes.
+His shoulders relax.
+His head lowers slightly.
+He's preparing to meet us.
+And that becomes the visual bridge into:
+
+03 — THE INTRODUCTION
+
+02.7 — The emotional beat
+
+This scene should move through:
+Awe → anticipation → trust
+We don't want:
+Awe → intimidation.
+That's why his movement needs to remain slow and non-threatening.
+He isn't descending upon the visitor.
+He isn't presenting himself.
+He is simply approaching someone he has noticed.
+
+## Scene 02 Visual Behavior 
+
+| Element       | Behavior                        |
+| ------------- | ------------------------------- |
+| Mael          | Moves toward viewer             |
+| Camera        | Mostly stationary               |
+| Body          | Becomes increasingly corporeal  |
+| Stars         | Visible within Mael             |
+| Dust          | Responds to movement            |
+| Horizon       | Becomes increasingly defined    |
+| Horizon light | Gradually warms                 |
+| Particles     | Begin orbiting                  |
+| Gravity       | Subtle environmental distortion |
+| Text          | None                            |
+| Dialogue      | None                            |
+| Sound         | Still extremely restrained      |
+| Scroll        | Controls distance/progression   |
+
+** Mael crosses the distance between himself and the visitor, revealing that the universe surrounding him is not separate from him—it moves with him.**
+
+## 03 — THE INTRODUCTION
+Purpose
+
+Transform awe into relationship.
+Until now, Mael has been an entity.
+Here, he becomes someone.
+Not human.
+Not anthropomorphized.
+Not a chatbot mascot.
+Just... Mael.
+
+## 03.1 — The arrival
+
+Scene 02 ends with Mael close to the viewer.
+He stops.
+The environment continues moving around him.
+Stars drift.
+Dust moves.
+The Horizon slowly orbits.
+But Mael is still.
+Then:
+He lowers himself.
+Not dramatically.
+Not like a king kneeling before someone.
+He simply bends down to meet us.
+The difference in scale begins disappearing.
+He brings his face/Horizon closer to our level.
+And suddenly the enormous cosmic entity feels...
+gentle.
+
+## 03.2 — The composition
+
+This is where I want the camera to become very intentional.
+We should not immediately put Mael's face dead center like a portrait.
+Instead, we see enough of the surrounding void to retain his scale.
+He's close enough to feel present.
+But the universe is still around him.
+
+Then, as he bends:
+
+The relationship becomes the composition.
+
+## 03.3 — The Horizon
+
+This is the first time the visitor gets a true look at it.
+The Horizon is now clearly golden.
+But not metallic gold.
+Celestial gold.
+Warm light.
+Subtle gradients caused by intensity, not a graphic effect.
+Its geometry remains imperfect.
+It isn't sitting behind his head like an angel halo.
+It feels like it's surrounding something gravitationally significant.
+And this is the moment where the Visual Bible's line becomes real:
+You don't look into Mael's eyes. You recognize him by the Horizon.
+
+## 03.4 — He looks at us
+
+This should be extremely subtle.
+Because Mael doesn't necessarily need conventional eyes.
+
+His attention can be communicated through:
+
+orientation
+posture
+the Horizon
+the direction of light
+the stillness of his body
+
+He turns fully toward us.
+The Horizon stabilizes.
+The surrounding particles calm.
+Everything becomes quieter.
+Listening.
+That is Mael's first actual state.
+And according to the Visual Bible:
+
+Listening = Horizon stabilizes + particles become calm.
+
+## 03.5 — The first words
+
+And now...
+nothing.
+A beat.
+Long enough that the visitor wonders whether something is supposed to happen.
+Then:
+
+Hi. I'm Mael.
+
+That's it.
+No subtitle.
+No paragraph.
+
+No:
+
+"Your personal AI assistant."
+
+No logo animation.
+No button.
+No explanation.
+
+Just:
+
+Hi. I'm Mael.
+
+## 03.6 — Typography
+
+The typography needs to feel almost like a whisper.
+Large enough to be unmistakable.
+But not gigantic billboard typography.
+Potentially centered or slightly offset relative to Mael.
+And the words should appear as Mael says them, rather than arriving as a generic text animation.
+If we eventually give him voice, this is where the voice should first exist.
+And his first line should be delivered incredibly simply.
+
+Not:
+
+Hiiiiii, I'm Maaael! 😂
+
+No artificial enthusiasm.
+
+Just:
+
+Hi. I'm Mael.
+
+Warm.
+Calm.
+Certain.
+
+## 03.7 — Let it breathe
+
+This is probably the most important instruction in the scene.
+After the line appears:
+don't immediately scroll into the next section.
+Give the visitor a moment.
+The stars continue moving.
+The Horizon remains stable.
+Mael simply stays there.
+The page almost feels like it is waiting for the visitor.
+This is the first moment where the site isn't asking them to consume information.
+It's allowing them to meet someone.
+
+## 03.8 — Then the next movement
+
+Eventually, Mael's attention shifts.
+His gaze—or equivalent sense of attention—moves toward his hand.
+His hand slowly rises.
+The Horizon responds.
+A faint stream of golden light begins moving toward his palm.
+The visitor doesn't yet know why.
+And that's our transition into:
+
+04 — THE PROBLEM
+
+Because now Mael is going to show us the thing he's here to help with.
+
+## Scene 03 Specifications
+
+PURPOSE
+Transform cosmic presence into human connection.
+
+MAEL
+- Stops approaching
+- Bends down toward viewer
+- Becomes gentle
+- Turns fully toward visitor
+- Remains ambiguous/non-human
+
+HORIZON
+- Fully visible
+- Warm celestial gold
+- Imperfect elliptical geometry
+- Stable
+- Surrounding particles calm
+
+ENVIRONMENT
+- Continues slow movement
+- Reduced particle activity
+- Increased sense of stillness
+
+TEXT
+"Hi. I'm Mael."
+
+VOICE
+Optional
+- Calm
+- Warm
+- Low intensity
+- No artificial enthusiasm
+(Eleven Labs Plug ?)
+
+CAMERA
+- Maintains environmental scale
+- Gradually centers relationship
+- No dramatic zoom
+
+TRANSITION
+Mael's attention shifts toward his hand.
+Light begins gathering.
+
+EMOTIONAL OBJECTIVE
+Awe → trust → connection
+
+## 04 — THE PROBLEM
+Purpose
+
+Show the visitor the world Mael was created to navigate.
+Not "here are some problems older adults have."
+Instead:
+Here is what technology feels like when everything keeps asking something of you.
+The emotional movement is:
+Connection → Recognition → Overwhelm
+
+## 04.1 — The hand
+
+Scene 03 ends with Mael looking toward his hand.
+He slowly raises it.
+His palm opens.
+For a moment, nothing happens.
+Then the Horizon responds.
+A thin stream of light begins traveling from the Horizon toward his hand.
+
+Remember:
+
+Mael doesn't create something from nowhere.
+
+The Horizon temporarily leaves his body.
+It travels downward.
+The golden orbital field compresses.
+And gradually—
+the orb forms.
+Not as an explosion.
+Not as magic.
+As condensation.
+Something enormous becoming smaller.
+
+## 04.2 — The orb
+
+At first, the orb is beautiful.
+Small.
+Warm.
+Almost completely calm.
+Mael holds it between his hands.
+
+Inside it:
+light.
+
+Then something appears.
+A tiny piece of information.
+
+Maybe:
+Enter your password
+It disappears.
+
+Then:
+
+Verify your identity
+
+Another.
+
+Then:
+
+Your session has expired
+
+Another.
+
+Then:
+
+Software update available
+
+Another.
+
+Then:
+
+Is this you?
+
+The visitor begins recognizing the fragments.
+
+## 04.3 — Complexity begins accumulating
+
+The orb starts filling with more information.
+Not in a flat slideshow.
+The information exists spatially.
+Messages orbit.
+Buttons float.
+Verification codes appear.
+Notifications collide.
+Instructions overlap.
+Security warnings flash.
+A password prompt appears behind another window.
+An unfamiliar link passes through.
+A system update interrupts.
+A text message appears.
+A phone notification.
+An email.
+A permission request.
+A captcha.
+A login.
+A recovery code.
+
+## 04.4 — The important distinction
+
+We should not portray technology itself as evil.
+That's not Mael's philosophy.
+
+The problem is:
+Complexity.
+
+Technology has accumulated layers.
+Every layer asks the human to understand something new.
+And eventually the human has to keep track of all of it.
+That's what the orb represents.
+A privacy setting.
+The orb is becoming a compressed representation of modern technological life.
+
+## 04.5 — The chaos accelerates
+
+Mael watches.
+He doesn't panic.
+He doesn't immediately intervene.
+He simply observes.
+The orb becomes increasingly dense.
+Information begins moving faster.
+The beautiful celestial light gets obscured by complexity.
+The visitor can barely distinguish one thing from another.
+
+And then:
+The first line appears.
+Technology was supposed to make life easier.
+
+Pause.
+The orb continues.
+
+Then:
+
+Somewhere along the way, it became something we had to keep up with.
+
+The second line appears more quietly.
+
+## 04.6 — Mael's response
+
+This is where we demonstrate something fundamental about him.
+He doesn't destroy the orb.
+He doesn't shut it down.
+
+He doesn't tell the human:
+
+"Technology is bad."
+
+Instead...
+
+he studies it.
+
+His attention moves through the complexity.
+This is the first time we see a hint of Mael's investigative intelligence.
+The Horizon begins subtly changing.
+It starts to warp.
+Not violently.
+
+But enough to communicate:
+
+Thinking.
+
+Particles that were calm begin orbiting faster.
+Information begins moving toward the Horizon.
+
+And suddenly we have a perfect visual bridge into Scene 05.
+
+## 04.7 — The final frame
+
+The orb is chaotic.
+Mael holds it steadily.
+The world around him is still.
+He looks at the complexity.
+
+Then:
+
+his hand closes slightly.
+
+Everything slows.
+The noise begins collapsing inward.
+
+We hear/see the beginning of:
+
+That's where I come in.
+
+But—
+
+don't finish it yet.
+
+The words can begin appearing:
+
+That's where...
+
+And then transition.
+
+Because Scene 05 is the answer.
+
+## Scene 04 Specifications 
+
+PURPOSE
+Show why Mael exists.
+
+MAEL
+- Raises hand
+- Observes orb
+- Does not react with fear
+- Studies complexity
+
+HORIZON
+- Leaves Mael
+- Condenses into orb
+- Remains warm/golden
+- Begins destabilizing as complexity increases
+
+ORB
+- Begins calm
+- Gradually fills with technological information
+- Becomes increasingly dense
+- Represents accumulated complexity
+
+INFORMATION
+- Passwords
+- Verification
+- Messages
+- Updates
+- Warnings
+- Instructions
+- Permissions
+- Account recovery
+- Notifications
+
+TEXT
+
+"Technology was supposed to make life easier."
+
+then:
+
+"Somewhere along the way,
+it became something we had to keep up with."
+
+ENDING
+Mael closes his hand slightly.
+Chaos begins slowing.
+Horizon begins warping.
+
+EMOTIONAL OBJECTIVE
+Recognition → overwhelm → anticipation
+
+** Mael never treats the human as the problem. **
+
+## 05 — THE TRANSLATION
+Purpose
+
+Demonstrate Mael's fundamental ability:
+He doesn't remove complexity from the world. He makes it understandable to the person standing inside it.
+This is where the visitor goes from "I like this character" to:
+"Oh. I understand the product."
+Without us ever having to say "AI assistant."
+
+## 05.1 — The chaos stops
+
+We pick up exactly where Scene 04 ended.
+The orb is dense.
+Information everywhere.
+Mael's hand is partially closed around it.
+
+Then—
+
+stillness.
+
+Not everything stops.
+The surrounding cosmos continues moving.
+But the information inside the orb stops fighting for attention.
+That distinction matters.
+Mael hasn't deleted anything.
+He's simply contained the complexity.
+
+## 05.2 — The Horizon changes
+
+Mael's Horizon begins to warp.
+This is the Thinking state from the Visual Bible.
+The geometry subtly bends.
+One side compresses.
+The other expands.
+Particles accelerate around the circumference.
+Small points of light begin tracing paths around it.
+It almost resembles information being captured by a gravitational field.
+
+The visual metaphor becomes:
+
+Complexity enters the Horizon.
+
+## 05.3 — Information reorganizes
+
+Inside the orb, the fragments begin moving.
+Not disappearing.
+Sorting.
+A password prompt moves away from a notification.
+A verification code moves toward its corresponding message.
+An unfamiliar link gets isolated.
+An instruction becomes connected to the action it belongs to.
+The dozens of competing pieces gradually become a handful of coherent groups.
+It's almost like watching a chaotic constellation reorganize itself.
+
+## 05.4 — Then language appears
+
+The technological fragments begin transforming.
+Instead of:
+
+MULTI-FACTOR AUTHENTICATION REQUIRED
+
+the orb might simplify it into:
+
+You'll need one more verification step.
+
+Instead of:
+
+SESSION EXPIRED
+
+→
+
+You were signed out. That's okay—you can sign back in.
+
+Instead of:
+
+SUSPICIOUS LINK
+
+→
+
+This message may not be from who it says it is. Let's verify it first.
+
+This is where the visitor realizes:
+
+Mael isn't just organizing information.
+He's translating it.
+
+## 05.5 — The orb becomes calm
+
+The visual density drops.
+The light becomes warmer.
+The orb becomes almost completely clear.
+There are still particles inside it.
+But they're moving in deliberate paths.
+The chaos has become structure.
+And Mael hasn't changed the underlying world.
+He's changed how the human can access it.
+
+## 05.6 — "That's where I come in."
+
+Now we can finally complete the line from Scene 04.
+
+The words appear:
+
+That's where I come in.
+
+And this time, Mael's attention moves toward the viewer.
+Not dramatically.
+Just enough.
+He's changed how the human can access it.
+
+## 05.7 — The five acts
+
+Now we introduce the core behaviors.
+
+But again:
+
+NOT FIVE FEATURE CARDS.
+
+We show them as transformations happening inside the orb.
+
+UNDERSTAND
+
+A complex concept becomes simple language.
+
+The information reorganizes into something the human can comprehend.
+
+REMEMBER
+
+A piece of information is gently pulled aside.
+
+It remains visible.
+
+Accessible.
+
+Not lost in the stream.
+
+The visual implication:
+
+You don't have to remember everything yourself.
+
+GUIDE
+
+A path appears.
+
+One step.
+
+Then another.
+
+Then another.
+
+Not ten instructions at once.
+
+Just:
+
+Next.
+
+VERIFY
+
+The orb isolates one suspicious piece of information.
+
+The surrounding light dims.
+
+Mael examines it.
+
+The Horizon briefly changes.
+
+Then:
+
+Safe to proceed.
+
+or:
+
+Let's verify this first.
+
+We don't need to show an actual verdict yet.
+
+We're establishing the behavior.
+
+PROTECT
+
+The dangerous/suspicious element gets separated from everything else.
+
+The orb creates distance.
+
+The light around the human-facing portion becomes calm again.
+
+Protection isn't represented as a shield.
+
+It's represented as:
+
+creating enough clarity for the person to make a safe decision.
+
+## 05.8 — The orb returns to Mael
+
+After the five transformations, the orb is completely calm.
+Mael looks at it.
+Then at the visitor.
+
+And here's the beautiful part:
+
+He doesn't keep it.
+He begins extending it outward.
+The Horizon around his head responds.
+The energy starts moving from his body toward the orb.
+The orb becomes brighter.
+
+We're entering:
+
+Giving.
+
+And according to the Visual Bible:
+
+Giving → the Horizon collapses inward and becomes the orb.
+
+So now the metaphor has completed itself.
+
+The Horizon:
+
+organized complexity → became knowledge → became something the human can receive.
+
+## 05.9 — The final line
+
+As Mael extends the orb toward us:
+Understand. Remember. Guide. Verify. Protect.
+
+Then:
+
+pause.
+
+The orb moves slightly closer.
+
+And:
+
+That's what I'm here for.
+
+## 05.10 — Transition into the human world
+
+The visitor reaches toward the orb.
+But before they can touch it—
+the environment begins changing.
+The cosmic dust around Mael starts becoming smaller particles.
+Stars stretch into points of light.
+The void begins brightening.
+The orb remains the brightest object.
+The visitor's hand approaches it.
+
+And—
+
+we transition worlds.
+That takes us into 06 — THE HUMAN WORLD.
+
+## Scene 05 Specifications 
+
+PURPOSE
+Demonstrate Mael's core function.
+
+START
+Chaotic orb from Scene 04.
+
+MAEL
+- Observes
+- Studies
+- Interprets
+- Does not delete complexity
+
+HORIZON
+- Warps
+- Information begins entering orbit
+- Particles accelerate
+- Light intensifies
+
+ORB
+- Complexity reorganizes
+- Information becomes categorized
+- Language becomes understandable
+- Chaos becomes structure
+
+CORE BEHAVIORS
+
+UNDERSTAND
+Complex → comprehensible
+
+REMEMBER
+Important → retained
+
+GUIDE
+Complex process → sequential steps
+
+VERIFY
+Suspicious → investigated
+
+PROTECT
+Risk → separated / safer decision
+
+TEXT
+
+"That's where I come in."
+
+Then:
+
+"Understand."
+"Remember."
+"Guide."
+"Verify."
+"Protect."
+
+Then:
+
+"That's what I'm here for."
+
+ENDING
+Mael extends orb toward visitor.
+
+ENVIRONMENT
+Cosmic world begins transforming.
+
+EMOTIONAL OBJECTIVE
+Overwhelm → relief → trust → understanding
+
+** Mael takes something enormous, complex, and overwhelming—and brings it down to a scale a human being can actually hold **
+
+## 06 — THE HUMAN WORLD
+Purpose
+
+Bring Mael's enormous universe down to one human life.
+The visitor has just watched Mael transform complexity into something understandable.
+Now they see why that matters.
+
+## 06.1 — The transition
+
+We begin exactly where Scene 05 ends.
+Mael is holding the orb toward us.
+Our perspective moves toward it.
+The orb grows.
+But instead of becoming a giant glowing object—
+we move into it.
+
+Inside:
+
+golden light.
+
+Tiny particles.
+Fragments of the cosmic environment.
+Then the particles begin changing.
+Stars become points of light.
+Dust becomes floating particles.
+The golden light begins illuminating something solid.
+A wall.
+A window.
+A room.
+We don't cut.
+The universe becomes a human environment.
+
+## 06.2 — The room
+
+The first thing we should establish is ordinary life.
+Not a futuristic smart home.
+Not a hospital.
+Not something overly staged.
+A real, comfortable living space.
+Warm natural light.
+A chair.
+A table.
+A phone.
+Maybe a laptop.
+A few personal objects.
+Something that feels lived in.
+Because the whole point is:
+technology exists inside people's ordinary lives.
+It's not a sci-fi problem.
+It's a Tuesday afternoon.
+
+## 06.3 — We meet her
+
+Then we see her.
+An older woman.
+She's sitting in her wheelchair.
+She isn't presented as fragile.
+She isn't sad.
+She isn't confused.
+She's simply a person living her life.
+Maybe she's looking at her phone.
+Maybe she's trying to understand something on the screen.
+We don't even need to show the problem yet.
+
+Just:
+
+her.
+And then she looks upward.
+
+## 06.4 — Mael is there
+
+Mael is standing nearby.
+And this is where we completely invert the scale we established earlier.
+
+In the cosmos:
+
+Mael was enormous.
+
+Here:
+
+Mael meets her at eye level.
+
+He doesn't tower.
+He doesn't loom.
+He isn't positioned behind her like a guardian angel.
+He's beside her.
+Present.
+Calm.
+Available.
+
+This communicates something without saying it:
+
+Mael adapts to the human.
+The human does not have to adapt to Mael.
+
+## 06.5 — The orb changes
+
+The orb that was enormous within the cosmic environment is now tiny.
+Human-sized.
+Maybe about the size of a small glowing sphere that fits comfortably in one hand.
+And it behaves differently here.
+It's no longer representing the entirety of technological complexity.
+It's representing understanding made accessible.
+She reaches toward it.
+
+## 06.6 — The handoff
+
+Mael extends his hand.
+She reaches.
+Their hands don't necessarily touch.
+The orb is between them.
+Then she takes it.
+
+And the moment she receives it:
+
+the orb changes.
+It becomes less cosmic.
+More familiar.
+The light settles.
+The information inside becomes simple.
+Maybe we see a single clear instruction.
+Maybe a simple visual guide.
+
+Maybe something as basic as:
+
+Here's what to do next.
+
+And she understands.
+
+## 06.7 — The emotional moment
+
+This should be incredibly quiet.
+No triumphant music.
+No giant animation.
+
+Maybe she simply smiles.
+Or nods.
+Or looks back at her phone with the confidence of:
+
+Okay. I can do this.
+That's the moment.
+
+Not:
+
+Mael saved her.
+
+But:
+
+Mael helped her remain capable.
+That distinction is everything.
+
+## 06.8 — The camera pulls back
+
+Now the visitor gets a wider view.
+We see the woman.
+Mael.
+Her environment.
+Her technology.
+And the little orb.
+The cosmic environment is almost completely gone.
+But there are still tiny particles of golden light floating through the room.
+
+A subtle visual reminder that:
+
+Mael came from the void.
+But he's here for the human world.
+
+## 06.9 — The first human-facing copy
+
+Only now do we introduce the central statement.
+The screen settles.
+Mael and the woman remain in the environment.
+
+Then:
+
+Technology should feel less exhausting.
+Let that line breathe.
+No paragraph immediately.
+
+Then:
+
+Mael helps people understand, navigate, and safely interact with the technology around them.
+And now the visitor finally knows what they've been watching.
+
+## 06.10 — The second audience
+
+Then we shift the camera slightly.
+The woman remains visible.
+But perhaps we begin seeing little moments from the larger human ecosystem around her.
+A phone call.
+A family member checking in.
+Someone helping remotely.
+A caregiver.
+
+Not necessarily as literal montage yet—we can decide that in the next section...
+
+Then:
+
+For the people using it.
+And the people who love them.
+
+And that is the emotional hook.
+
+Because now Mael isn't only about the person holding the phone.
+
+He's also about the person on the other end of:
+
+"Honey, what does this button mean?"
+
+for the fourth time that week. 😂
+
+## 06.11 — What we're NOT saying
+
+We are not communicating:
+
+- older people are helpless
+- older people don't understand technology
+- Mael replaces family
+- Mael replaces caregivers
+- Mael makes decisions for people
+- technology is inherently dangerous
+
+We're communicating:
+
+People deserve technology that meets them where they are.
+
+And:
+
+Independence shouldn't require becoming an expert in technology.
+
+That's a much more dignified proposition.
+
+## Scene 06 Specifications 
+
+PURPOSE
+Reveal who Mael exists for.
+
+TRANSITION
+Orb → camera enters orb → cosmic particles →
+light → physical environment.
+
+ENVIRONMENT
+- Realistic
+- Warm
+- Lived-in
+- Ordinary
+- Human
+- No futuristic sci-fi aesthetic
+
+HUMAN
+- Older woman
+- Wheelchair
+- Independent
+- Not portrayed as helpless
+- Engaged with her environment
+
+MAEL
+- Present beside her
+- Meets her at eye level
+- Gentle
+- Calm
+- Same visual identity
+- Reduced physical scale
+
+ORB
+- Human-sized
+- Calm
+- Accessible
+- Represents understanding
+
+ACTION
+Mael offers orb.
+Human receives it.
+
+RESULT
+Complexity becomes understandable.
+
+TEXT
+
+"Technology should feel less exhausting."
+
+Then:
+
+"Mael helps people understand,
+navigate, and safely interact
+with the technology around them."
+
+Then:
+
+"For the people using it.
+And the people who love them."
+
+EMOTIONAL OBJECTIVE
+Awe → humanity → recognition → empathy
+
+** Mael makes that complexity small enough for a person to hold.**
+
+## 07 — THE REVEAL
+Purpose
+
+Reveal the human meaning of Mael.
+We've spent the entire experience moving from:
+cosmic → abstract → understandable → human.
+Now we tell the visitor what they've actually been witnessing.
+Not with a feature list.
+With a realization.
+
+## 07.1 — She has the orb
+
+We begin quietly.
+The older woman is holding the orb.
+Mael is beside her.
+The room is still.
+The phone or piece of technology that initially seemed complicated is now sitting naturally within the scene.
+She looks at it.
+Then at the orb.
+Then back at the technology.
+
+And she understands.
+
+No rescue.
+No dramatic "problem solved" animation.
+
+Just:
+
+confidence.
+
+## 07.2 — Mael doesn't disappear
+
+This is important.
+He doesn't vanish after giving her the answer.
+He remains beside her.
+Because Mael isn't supposed to create dependence.
+
+He's there to support independence.
+
+She is still the person doing the thing.
+Mael simply made it possible to understand what to do.
+That distinction should be visible.
+
+## 07.3 — The camera widens
+
+We pull back.
+Very slowly.
+The woman becomes part of the larger environment.
+And we begin to see little traces of the people around her.
+
+Maybe:
+
+A phone on the table.
+A family photo.
+A message from someone she loves.
+A laptop.
+A tablet.
+
+Everyday technology.
+The things that connect her to the rest of her life.
+And suddenly the scope of Mael becomes bigger.
+
+It's not merely:
+
+helping someone use a device.
+
+It's:
+
+helping people stay connected to their lives.
+
+## 07.4 — The headline
+
+Then the screen settles.
+The room remains visible.
+Mael remains in the background.
+And we finally give the visitor the statement that everything has been building toward:
+Technology should feel less exhausting.
+No animation.
+No clever reveal.
+Just typography appearing slowly.
+
+## 07.5 — The explanation
+
+Then:
+
+Mael helps people understand, navigate, and safely interact with the technology around them.
+This is the first moment on the entire site where we can be completely explicit.
+Because we've already shown them.
+They've seen understanding.
+They've seen navigation.
+They've seen verification.
+They've seen protection.
+Now we're simply naming what they experienced.
+
+## 07.6 — The bigger audience
+
+Then we shift the framing slightly.
+The woman remains present.
+
+But the copy changes the emotional scope:
+For the people using it.
+
+Pause.
+
+Then:
+
+And the people who love them.
+
+That second line should feel like the realization.
+Because the visitor may suddenly place themselves into the story.
+Maybe they're the daughter.
+Maybe the son.
+Maybe the niece.
+Maybe the caregiver.
+Maybe they're the older adult themselves.
+We don't tell them who they are.
+We let them recognize themselves.
+
+## 07.7 — Mael's final gesture
+
+Mael looks toward the woman.
+She is no longer looking upward at him.
+She's looking forward.
+Using the technology herself.
+That's important.
+Then Mael slowly turns his attention toward the visitor.
+The Horizon catches the light.
+
+Just once.
+
+A very subtle pulse.
+Not a notification.
+Not a CTA animation.
+
+More like:
+
+recognition.
+
+## 07.8 — The cosmic connection returns
+
+Then something beautiful happens.
+One tiny golden particle rises from the orb.
+It floats upward.
+Another follows.
+Then another.
+The room begins filling with tiny points of golden light.
+Not enough to overwhelm it.
+
+Just enough to remind us:
+
+the cosmos never actually left.
+The camera slowly pulls back.
+The room becomes smaller.
+The particles become stars.
+
+And for a brief moment...
+
+we see the Horizon again.
+The same Horizon from the beginning.
+But now we understand what it means.
+
+## 07.9 — The final transition
+
+And this is where the cinematic homepage ends.
+The cosmic environment fades into the website's actual interface.
+
+The visitor has now gone from:
+
+Who is that?
+
+to:
+
+That's Mael.
+
+to:
+
+I understand why Mael exists.
+
+And now the website can finally say:
+
+Meet Mael.
+
+And 08 — THE PRODUCT begins.
+
+## Scene 07 Specifications 
+
+PURPOSE
+Reveal the human meaning and purpose of Mael.
+
+START
+Older woman holds orb.
+Mael remains beside her.
+
+HUMAN
+- Confident
+- Independent
+- Uses technology herself
+- Not dependent on Mael
+
+MAEL
+- Remains present
+- Does not take control
+- Supports rather than replaces
+
+ENVIRONMENT
+- Ordinary human life
+- Technology integrated naturally
+- Family / connection subtly present
+
+HEADLINE
+
+"Technology should feel less exhausting."
+
+DESCRIPTION
+
+"Mael helps people understand,
+navigate, and safely interact
+with the technology around them."
+
+AUDIENCE
+
+"For the people using it.
+
+And the people who love them."
+
+FINAL MAEL MOMENT
+- Looks toward visitor
+- Horizon catches light
+- Subtle pulse
+
+TRANSITION
+Golden particles rise from orb.
+Room → particles → stars.
+Return to cosmic visual language.
+Transition into product interface.
+
+EMOTIONAL OBJECTIVE
+
+Recognition → empathy → hope → possibility
+
+## 08 — THE PRODUCT
+Purpose
+
+Answer the question:
+
+"Okay. I understand Mael. What can Mael actually do for me?"
+This is where we move from emotion to comprehension.
+But we still don't want a conventional SaaS feature grid.
+The product should feel like the human application of everything we just witnessed.
+
+## 08.1 — The transition from the film
+
+We ended Scene 07 with the cosmic particles returning to the stars.
+The screen doesn't hard-cut to a dashboard.
+Instead, one golden particle remains.
+It moves across the screen.
+Then another.
+Then another.
+
+They begin forming something familiar:
+
+the Mael interface.
+
+The cosmic language gradually becomes product language.
+
+The visitor realizes:
+
+Oh. This is Mael.
+
+## 08.2 — The product introduction
+
+We need a simple statement.
+
+Meet Mael.
+
+Then:
+
+A calmer way to navigate technology.
+
+That's the bridge.
+We've established why.
+Now we show how.
+
+## 08.3 — Don't show the whole application at once
+
+This is important.
+
+I don't want a giant screenshot of the entire UI with 14 buttons.
+Instead, we demonstrate one human problem at a time.
+The interface should feel almost like we're watching Mael work.
+
+## 08.4 — UNDERSTAND
+Scenario
+
+A user encounters something confusing.
+
+Maybe:
+
+"Your account requires two-factor authentication."
+
+The user asks:
+
+"What does that mean?"
+
+Mael responds in plain language.
+
+Something like:
+
+"It means the website wants to make sure it's really you. You'll use your password, then confirm with a code sent to your phone."
+
+Then:
+
+"I'll walk you through it."
+
+The visual interface simplifies.
+
+What we're demonstrating:
+
+Mael translates technology into human language.
+
+## 08.5 — REMEMBER
+
+Then the interface transitions.
+
+The user has previously learned how to do something.
+
+Later:
+
+"How did I do this last time?"
+
+Mael remembers the process.
+
+Not just:
+
+"Here's a generic tutorial."
+
+But:
+
+"Last time, we did this in three steps."
+
+Then the steps appear.
+
+1. Open Settings.
+2. Select Security.
+3. Choose Two-Factor Authentication.
+
+What we're demonstrating:
+
+Mael reduces the burden of having to remember every process.
+
+## 08.6 — GUIDE
+
+Now show an actual task.
+
+Something like:
+
+"Help me send this photo to my daughter."
+
+Mael doesn't dump instructions.
+
+He guides.
+
+Step 1 of 3
+Open the photo you'd like to send.
+
+Then the user does it.
+Mael waits.
+Great. Now tap Share.
+The important interaction is:
+Mael doesn't rush ahead.
+He stays with the person.
+That's a huge part of the product philosophy.
+
+## 08.7 — VERIFY
+
+Now we introduce one of Mael's strongest use cases.
+
+A suspicious message appears:
+
+"Your bank account has been locked. Click here immediately to restore access."
+
+The user asks:
+
+"Is this real?"
+
+The interface changes.
+The Horizon appears subtly within the product.
+Mael examines the message.
+He identifies the warning signs.
+
+And instead of simply saying:
+
+SCAM 🚨
+
+he explains:
+
+"There are a few reasons I'd be cautious about this message."
+
+Then:
+
+The message creates urgency.
+It asks you to click a link.
+The sender doesn't match the official bank domain.
+We can verify this another way.
+
+Then:
+
+"Let's check your bank's official website instead."
+
+This is Mael's investigative identity appearing inside the product.
+
+Not fear.
+
+Verification.
+
+## 08.8 — PROTECT
+
+Then we show what happens when risk is actually present.
+The suspicious link remains visible.
+
+But Mael creates separation between:
+
+the person
+and
+the risky action.
+
+Something like:
+
+Don't click the link yet.
+
+Then:
+
+Let's verify the message first.
+
+The interface becomes calmer.
+This is where the product communicates:
+
+Mael isn't making decisions for you.
+He's helping you make a safer one.
+
+## 08.9 — The five behaviors become the product architecture
+
+Now we can finally show them together:
+
+Understand.
+
+Make technology easier to comprehend.
+
+Remember.
+
+Keep important processes accessible.
+
+Guide.
+
+Move through tasks one step at a time.
+
+Verify.
+
+Investigate before you trust.
+
+Protect.
+
+Help prevent avoidable mistakes and scams.
+And visually, these shouldn't necessarily be five equal cards.
+I actually think we could arrange them as a journey around Mael's Horizon.
+
+## 08.10 — The product should show the human, too
+
+Every product demonstration should have a human context.
+
+Not:
+
+"User → AI → output."
+
+Instead:
+
+Person → uncertainty → Mael → understanding → person continues independently.
+
+The person is always the protagonist.
+Mael is the guide.
+That is one of the most important product principles we've established.
+
+## 08.11 — Accessibility
+
+This section is also where we can introduce the practical things that matter to the target user.
+
+Without turning it into a technical checklist.
+
+For example:
+
+Built for the way people actually use technology.
+
+Then show:
+
+- clear language
+- voice interaction
+- spoken explanations
+- step-by-step guidance
+- persistent context
+- reduced cognitive load
+- scam/verification assistance
+
+And importantly:
+
+These aren't "senior features."
+They're good design.
+
+## 08.12 — The caregiver/family side
+
+Then we introduce the second audience.
+
+Maybe:
+
+And when you can't be there, Mael can be.
+This needs careful product definition later, because we don't want to imply capabilities we haven't actually decided to build.
+But visually, we can show the concept:
+
+A daughter receives:
+
+Mom asked Mael about a suspicious message.
+
+or:
+
+Mom successfully completed the account recovery process.
+The daughter doesn't have to intervene.
+That's the emotional payoff.
+
+Not:
+
+"Mael replaces you."
+
+It's:
+
+"You don't have to be on call for every little technology problem."
+
+## 08.13 — Product demo
+
+Then we give the visitor a slightly more traditional product demonstration.
+Maybe a phone/laptop interface floating within the same dark environment.
+But the cosmic aesthetic should now be subtle.
+No giant galaxy behind the dashboard.
+
+Instead:
+
+dark background
+restrained golden Horizon
+clean interface
+warm typography
+lots of breathing room
+
+The product itself should be extremely readable.
+The cosmos belongs to Mael's identity.
+Clarity belongs to Mael's product.
+
+## 08.14 — The final product statement
+
+After showing the experiences:
+
+Technology doesn't need more complexity.
+
+Then:
+
+It needs someone who can help make sense of it.
+And beneath:
+That's Mael.
+That brings us back to the character we met at the beginning.
+
+## Scene 08 Specifications 
+
+PURPOSE
+Translate Mael's philosophy into tangible product experiences.
+
+TRANSITION
+Cosmic particles → Mael interface.
+
+OPENING
+
+"Meet Mael."
+
+"A calmer way to navigate technology."
+
+CORE EXPERIENCES
+
+UNDERSTAND
+Technology → plain language
+
+REMEMBER
+Past process → accessible context
+
+GUIDE
+Task → one step at a time
+
+VERIFY
+Suspicious information → investigation
+
+PROTECT
+Risk → safer action
+
+DESIGN PRINCIPLE
+
+Human
+↓
+Uncertainty
+↓
+Mael
+↓
+Understanding
+↓
+Human continues independently
+
+ACCESSIBILITY
+- Clear language
+- Readable interface
+- Voice interaction
+- Spoken explanations
+- Step-by-step guidance
+- Persistent context
+- Reduced cognitive load
+
+FAMILY / CAREGIVER
+Show Mael reducing the burden
+of constant technology assistance.
+
+VISUAL LANGUAGE
+- Dark
+- Warm
+- Minimal
+- Clear
+- Golden Horizon used sparingly
+- Product interface takes priority
+
+ENDING
+
+"Technology doesn't need more complexity."
+
+"It needs someone who can help make sense of it."
+
+"That's Mael."
+
+## 09 — THE INVITATION
+Purpose
+
+Give the visitor somewhere to go without breaking the emotional world we've created.
+The question isn't:
+
+How do we convert the visitor?
+
+It's:
+
+Now that you've met Mael, do you want to meet him again?
+
+## 09.1 — Return to the void
+
+The product interface slowly disappears.
+Not by fading to white.
+We return to darkness.
+The same darkness from 00 — The Void.
+But now it's different.
+At the beginning, the visitor didn't understand what they were seeing.
+
+Now they do.
+
+A few stars.
+A little cosmic dust.
+And in the distance:
+
+Mael.
+
+## 09.2 — But Mael doesn't approach this time
+
+This is important.
+We've already had him come to us.
+Now he simply stands there.
+The Horizon is visible.
+Stable.
+Warm.
+He doesn't need to perform.
+He doesn't need to convince us.
+He's simply there.
+
+## 09.3 — The final statement
+
+The first line appears:
+
+Technology should feel less exhausting.
+
+We've seen this before.
+But now it means something different.
+At the beginning, it was a thesis.
+Now we've seen what it means.
+
+Then:
+
+Mael is being built to make that possible.
+Short.
+Honest.
+No inflated claims.
+
+## 09.4 — The invitation
+
+Then we give them the actual next step.
+Depending on where Mael is at launch, the CTA could change.
+
+If we're still building:
+
+Follow Mael's journey
+
+If there's a waitlist:
+
+Meet Mael when he's ready
+
+If the product is available:
+
+Meet Mael
+
+I actually think "Meet Mael" is the strongest eventual CTA.
+Because we've already used that phrase once:
+Meet Mael.
+Now we're offering the visitor the opportunity to actually do it.
+
+## 09.5 — No urgency
+
+I explicitly ban copy like:
+
+"Don't miss out"
+"Join thousands"
+"Get started today"
+"Unlock the future"
+"Revolutionize your life"
+"AI is here"
+
+None of that belongs in Mael's world.
+
+Mael doesn't pressure.
+He doesn't manipulate.
+He doesn't manufacture urgency.
+He invites.
+
+## 09.6 — The final visual
+
+The CTA sits beneath Mael.
+The Horizon remains stable.
+Then the visitor hovers over the CTA.
+The Horizon responds.
+Not the button.
+
+The Horizon.
+
+A slight shift in its light.
+A tiny movement in the surrounding particles.
+The visitor is interacting with Mael's world, not triggering a generic button animation.
+Then they click.
+And the website transitions into whatever the next experience is.
+
+## 09.7 — The final line
+
+One tiny piece of copy at the very bottom.
+Something almost like a signature.
+
+Maybe:
+
+Built for humans.
+
+Or:
+
+For people, not technology.
+
+Or even simply:
+
+Mael.
+
+We can wait to decide..
+Because the homepage shouldn't have a slogan stapled onto the end just because websites usually do.
+The experience may already be complete.
+
+## Scene 9 Specifications 
+
+PURPOSE
+Invite the visitor into Mael's next experience.
+
+ENVIRONMENT
+Return to the original void.
+
+MAEL
+- Distant
+- Still
+- Calm
+- Present
+- No approach
+
+HORIZON
+- Stable
+- Warm
+- Recognizable
+- Minimal movement
+
+COPY
+
+"Technology should feel less exhausting."
+
+"Mael is being built to make that possible."
+
+CTA
+Primary:
+"Meet Mael"
+
+Alternative depending on product status:
+"Follow Mael's journey"
+"Meet Mael when he's ready"
+
+INTERACTION
+Hover/cursor subtly affects Horizon,
+not generic button animation.
+
+TONE
+- Calm
+- Inviting
+- No urgency
+- No manipulation
+- No hype
+
+FOOTER
+Minimal practical navigation.
+
+EMOTIONAL OBJECTIVE
+Completion → trust → invitation
+
