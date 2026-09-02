@@ -2,7 +2,7 @@ import { useMemo, useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 
-const PARTICLE_COUNT = 1400
+const PARTICLE_COUNT = 2200
 const PRESENCE_CENTER = new THREE.Vector3(0, -0.9, -7.5)
 
 export function ParticleField() {
@@ -47,6 +47,7 @@ export function ParticleField() {
           uPresenceCenter: { value: PRESENCE_CENTER },
           uPresenceStrength: { value: 0.42 },
           uOrbitStrength: { value: 0.12 },
+          uTime: { value: 0 },
         },
         vertexShader: `
           attribute float aSize;
@@ -54,25 +55,43 @@ export function ParticleField() {
           uniform vec3 uPresenceCenter;
           uniform float uPresenceStrength;
           uniform float uOrbitStrength;
+          uniform float uTime;
           varying float vBrightness;
+
+          mat2 rotate(float angle) {
+            float s = sin(angle);
+            float c = cos(angle);
+            return mat2(c, -s, s, c);
+          }
 
           void main() {
             vec3 displaced = position;
             vec3 fromPresence = position - uPresenceCenter;
             float distanceToPresence = length(fromPresence);
 
-            // The unseen presence has enough mass to visibly bend the field,
-            // while the center itself remains completely dark and unresolved.
-            float influence = 1.0 - smoothstep(1.5, 15.5, distanceToPresence);
+            // Mael is felt first as a gravitational absence. The field bends
+            // around an unresolved center instead of revealing an object.
+            float influence = 1.0 - smoothstep(1.5, 16.5, distanceToPresence);
+            float orbitalZone = 1.0 - smoothstep(2.0, 11.5, distanceToPresence);
+            float coreVoid = 1.0 - smoothstep(1.8, 4.8, distanceToPresence);
+
             vec3 radial = normalize(fromPresence + vec3(0.0001));
-            vec3 orbital = normalize(vec3(-fromPresence.z, 0.0, fromPresence.x) + vec3(0.0001));
 
-            float innerFalloff = 1.0 - smoothstep(0.0, 8.5, distanceToPresence);
-            float coreGravity = 1.0 - smoothstep(0.0, 5.5, distanceToPresence);
+            // Nearby stars accelerate into curved paths around the presence.
+            float orbitAngle = uTime * 0.075 * influence * orbitalZone;
+            vec2 orbitXZ = rotate(orbitAngle) * fromPresence.xz;
+            vec3 orbitalPosition = vec3(orbitXZ.x, fromPresence.y, orbitXZ.y) + uPresenceCenter;
 
-            displaced -= radial * influence * uPresenceStrength;
-            displaced += orbital * influence * innerFalloff * uOrbitStrength;
-            displaced -= radial * coreGravity * 0.16;
+            // Pull the surrounding field inward, but preserve a dark center.
+            // The resulting negative space makes the unseen mass readable.
+            displaced = mix(displaced, orbitalPosition, influence * 0.72);
+            displaced -= radial * influence * uPresenceStrength * 0.72;
+            displaced += radial * coreVoid * 0.62;
+
+            // Add a subtle second-order arc so the field does not read as a
+            // simple radial vortex or a visible ring.
+            vec3 tangent = normalize(vec3(-fromPresence.z, 0.0, fromPresence.x) + vec3(0.0001));
+            displaced += tangent * influence * orbitalZone * uOrbitStrength * 2.2;
 
             vec4 mvPosition = modelViewMatrix * vec4(displaced, 1.0);
             gl_Position = projectionMatrix * mvPosition;
@@ -106,7 +125,8 @@ export function ParticleField() {
     if (!points) return
 
     const elapsed = clock.getElapsedTime()
-    points.rotation.y = elapsed * 0.004
+    material.uniforms.uTime.value = elapsed
+    points.rotation.y = elapsed * 0.0025
     points.rotation.x = Math.sin(elapsed * 0.04) * 0.012
 
     const attribute = points.geometry.getAttribute('position') as THREE.BufferAttribute
