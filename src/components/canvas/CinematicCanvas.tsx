@@ -2,6 +2,7 @@ import { Canvas } from '@react-three/fiber'
 import { Camera } from './Camera'
 import { Lighting } from './Lighting'
 import { ParticleField } from '../particles/ParticleField'
+import { MaelPresence } from '../mael/MaelPresence'
 
 export function CinematicCanvas() {
   return (
@@ -15,6 +16,7 @@ export function CinematicCanvas() {
         <Camera />
         <Lighting />
         <ParticleField />
+        <MaelPresence />
       </Canvas>
     </div>
   )
