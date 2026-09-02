@@ -1,8 +1,7 @@
 .mael-app {
   position: relative;
-  min-height: 100svh;
+  min-height: 500svh;
   width: 100%;
-  overflow: hidden;
   background: var(--mael-void);
 }
 
