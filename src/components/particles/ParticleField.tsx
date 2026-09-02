@@ -30,14 +30,34 @@ export function ParticleField() {
 
   const material = useMemo(
     () =>
-      new THREE.PointsMaterial({
-        color: '#d8d4cc',
-        size: 0.085,
-        sizeAttenuation: true,
+      new THREE.ShaderMaterial({
         transparent: true,
-        opacity: 0.72,
         depthWrite: false,
         blending: THREE.AdditiveBlending,
+        uniforms: {
+          uSize: { value: 2.8 },
+          uPixelRatio: { value: Math.min(window.devicePixelRatio, 2) },
+        },
+        vertexShader: `
+          uniform float uSize;
+          uniform float uPixelRatio;
+          void main() {
+            vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+            gl_Position = projectionMatrix * mvPosition;
+            gl_PointSize = uSize * uPixelRatio * (70.0 / -mvPosition.z);
+          }
+        `,
+        fragmentShader: `
+          void main() {
+            vec2 centered = gl_PointCoord - vec2(0.5);
+            float distanceFromCenter = length(centered);
+            float circle = 1.0 - smoothstep(0.28, 0.5, distanceFromCenter);
+            float glow = 1.0 - smoothstep(0.0, 0.5, distanceFromCenter);
+            float alpha = circle * (0.62 + glow * 0.38);
+            if (alpha < 0.01) discard;
+            gl_FragColor = vec4(vec3(0.82, 0.80, 0.75), alpha);
+          }
+        `,
       }),
     [],
   )
