@@ -46,12 +46,14 @@ export function ParticleField() {
           uPixelRatio: { value: Math.min(window.devicePixelRatio, 2) },
           uPresenceCenter: { value: PRESENCE_CENTER },
           uPresenceStrength: { value: 0.22 },
+          uOrbitStrength: { value: 0.08 },
         },
         vertexShader: `
           attribute float aSize;
           attribute float aBrightness;
           uniform vec3 uPresenceCenter;
           uniform float uPresenceStrength;
+          uniform float uOrbitStrength;
           varying float vBrightness;
 
           void main() {
@@ -59,10 +61,16 @@ export function ParticleField() {
             vec3 fromPresence = position - uPresenceCenter;
             float distanceToPresence = length(fromPresence);
 
-            // The unseen presence gently bends nearby starlight.
-            float influence = 1.0 - smoothstep(2.0, 13.0, distanceToPresence);
-            vec3 direction = normalize(fromPresence + vec3(0.0001));
-            displaced += direction * influence * uPresenceStrength;
+            // Mael is still unseen. The field bends inward around an invisible
+            // center, then picks up the slightest sideways drift as if space
+            // itself has begun to orbit something.
+            float influence = 1.0 - smoothstep(2.5, 14.0, distanceToPresence);
+            vec3 radial = normalize(fromPresence + vec3(0.0001));
+            vec3 orbital = normalize(vec3(-fromPresence.z, 0.0, fromPresence.x) + vec3(0.0001));
+
+            float innerFalloff = 1.0 - smoothstep(0.0, 7.0, distanceToPresence);
+            displaced -= radial * influence * uPresenceStrength;
+            displaced += orbital * influence * innerFalloff * uOrbitStrength;
 
             vec4 mvPosition = modelViewMatrix * vec4(displaced, 1.0);
             gl_Position = projectionMatrix * mvPosition;
