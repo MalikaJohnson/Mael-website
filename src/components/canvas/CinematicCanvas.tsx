@@ -4,7 +4,11 @@ import { Lighting } from './Lighting'
 import { ParticleField } from '../particles/ParticleField'
 import { MaelPresence } from '../mael/MaelPresence'
 
-export function CinematicCanvas() {
+interface CinematicCanvasProps {
+  presenceProgress?: number
+}
+
+export function CinematicCanvas({ presenceProgress = 0 }: CinematicCanvasProps) {
   return (
     <div className="cinematic-canvas" aria-hidden="true">
       <Canvas
@@ -15,7 +19,7 @@ export function CinematicCanvas() {
         <color attach="background" args={['#000000']} />
         <Camera />
         <Lighting />
-        <ParticleField />
+        <ParticleField presenceProgress={presenceProgress} />
         <MaelPresence />
       </Canvas>
     </div>
