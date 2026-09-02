@@ -2,7 +2,7 @@ import { useMemo, useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 
-const PARTICLE_COUNT = 2200
+const PARTICLE_COUNT = 1400
 const PRESENCE_CENTER = new THREE.Vector3(0, -0.9, -7.5)
 
 export function ParticleField() {
