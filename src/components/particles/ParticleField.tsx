@@ -3,11 +3,12 @@ import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 
 const PARTICLE_COUNT = 2200
+const PRESENCE_CENTER = new THREE.Vector3(0, -0.9, -7.5)
 
 export function ParticleField() {
   const pointsRef = useRef<THREE.Points>(null)
 
-  const { geometry, phases, sizes, brightness } = useMemo(() => {
+  const { geometry, phases } = useMemo(() => {
     const positions = new Float32Array(PARTICLE_COUNT * 3)
     const phases = new Float32Array(PARTICLE_COUNT)
     const sizes = new Float32Array(PARTICLE_COUNT)
@@ -24,7 +25,6 @@ export function ParticleField() {
       positions[i3 + 2] = Math.sin(phi) * Math.sin(theta) * radius
       phases[i] = Math.random() * Math.PI * 2
 
-      // Most stars are tiny points; only a small minority are brighter.
       sizes[i] = THREE.MathUtils.lerp(0.42, 1.05, Math.pow(Math.random(), 2.8))
       brightness[i] = THREE.MathUtils.lerp(0.28, 0.9, Math.pow(Math.random(), 3.2))
     }
@@ -33,7 +33,7 @@ export function ParticleField() {
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
     geometry.setAttribute('aSize', new THREE.BufferAttribute(sizes, 1))
     geometry.setAttribute('aBrightness', new THREE.BufferAttribute(brightness, 1))
-    return { geometry, phases, sizes, brightness }
+    return { geometry, phases }
   }, [])
 
   const material = useMemo(
@@ -44,14 +44,27 @@ export function ParticleField() {
         blending: THREE.AdditiveBlending,
         uniforms: {
           uPixelRatio: { value: Math.min(window.devicePixelRatio, 2) },
+          uPresenceCenter: { value: PRESENCE_CENTER },
+          uPresenceStrength: { value: 0.22 },
         },
         vertexShader: `
           attribute float aSize;
           attribute float aBrightness;
+          uniform vec3 uPresenceCenter;
+          uniform float uPresenceStrength;
           varying float vBrightness;
 
           void main() {
-            vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+            vec3 displaced = position;
+            vec3 fromPresence = position - uPresenceCenter;
+            float distanceToPresence = length(fromPresence);
+
+            // The unseen presence gently bends nearby starlight.
+            float influence = 1.0 - smoothstep(2.0, 13.0, distanceToPresence);
+            vec3 direction = normalize(fromPresence + vec3(0.0001));
+            displaced += direction * influence * uPresenceStrength;
+
+            vec4 mvPosition = modelViewMatrix * vec4(displaced, 1.0);
             gl_Position = projectionMatrix * mvPosition;
 
             float depthScale = 70.0 / max(-mvPosition.z, 1.0);
@@ -66,7 +79,6 @@ export function ParticleField() {
             vec2 centered = gl_PointCoord - vec2(0.5);
             float distanceFromCenter = length(centered);
 
-            // A tiny stellar core with only a whisper of surrounding light.
             float core = 1.0 - smoothstep(0.05, 0.22, distanceFromCenter);
             float halo = 1.0 - smoothstep(0.12, 0.5, distanceFromCenter);
             float alpha = (core * 0.95 + halo * 0.08) * vBrightness;
