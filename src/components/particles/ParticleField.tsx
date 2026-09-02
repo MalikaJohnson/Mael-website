@@ -8,9 +8,10 @@ const PRESENCE_CENTER = new THREE.Vector3(0, -0.9, -7.5)
 export function ParticleField() {
   const pointsRef = useRef<THREE.Points>(null)
 
-  const { geometry, phases } = useMemo(() => {
+  const { geometry, phases, twinklePhases } = useMemo(() => {
     const positions = new Float32Array(PARTICLE_COUNT * 3)
     const phases = new Float32Array(PARTICLE_COUNT)
+    const twinklePhases = new Float32Array(PARTICLE_COUNT)
     const sizes = new Float32Array(PARTICLE_COUNT)
     const brightness = new Float32Array(PARTICLE_COUNT)
 
@@ -24,6 +25,7 @@ export function ParticleField() {
       positions[i3 + 1] = Math.cos(phi) * radius * 0.58
       positions[i3 + 2] = Math.sin(phi) * Math.sin(theta) * radius
       phases[i] = Math.random() * Math.PI * 2
+      twinklePhases[i] = Math.random() * Math.PI * 2
 
       sizes[i] = THREE.MathUtils.lerp(0.42, 1.05, Math.pow(Math.random(), 2.8))
       brightness[i] = THREE.MathUtils.lerp(0.28, 0.9, Math.pow(Math.random(), 3.2))
@@ -33,7 +35,7 @@ export function ParticleField() {
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
     geometry.setAttribute('aSize', new THREE.BufferAttribute(sizes, 1))
     geometry.setAttribute('aBrightness', new THREE.BufferAttribute(brightness, 1))
-    return { geometry, phases }
+    return { geometry, phases, twinklePhases }
   }, [])
 
   const material = useMemo(
@@ -78,7 +80,7 @@ export function ParticleField() {
             vec3 radial = normalize(fromPresence + vec3(0.0001));
 
             // Nearby stars accelerate into curved paths around the presence.
-            float orbitAngle = uTime * 0.075 * influence * orbitalZone;
+            float orbitAngle = uTime * 0.12 * influence * orbitalZone;
             vec2 orbitXZ = rotate(orbitAngle) * fromPresence.xz;
             vec3 orbitalPosition = vec3(orbitXZ.x, fromPresence.y, orbitXZ.y) + uPresenceCenter;
 
@@ -126,7 +128,7 @@ export function ParticleField() {
 
     const elapsed = clock.getElapsedTime()
     material.uniforms.uTime.value = elapsed
-    points.rotation.y = elapsed * 0.0025
+    points.rotation.y = elapsed * 0.0035
     points.rotation.x = Math.sin(elapsed * 0.04) * 0.012
 
     const attribute = points.geometry.getAttribute('position') as THREE.BufferAttribute
@@ -134,7 +136,7 @@ export function ParticleField() {
 
     for (let i = 0; i < PARTICLE_COUNT; i += 1) {
       const i3 = i * 3
-      array[i3 + 1] += Math.sin(elapsed * 0.065 + phases[i]) * 0.0007
+      array[i3 + 1] += Math.sin(elapsed * 0.09 + phases[i]) * 0.001
     }
 
     attribute.needsUpdate = true
