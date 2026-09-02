@@ -5,10 +5,15 @@ import * as THREE from 'three'
 const PARTICLE_COUNT = 2200
 const PRESENCE_CENTER = new THREE.Vector3(0, -0.9, -7.5)
 
-export function ParticleField() {
-  const pointsRef = useRef<THREE.Points>(null)
+interface ParticleFieldProps {
+  presenceProgress?: number
+}
 
-  const { geometry, phases, twinklePhases } = useMemo(() => {
+export function ParticleField({ presenceProgress = 0 }: ParticleFieldProps) {
+  const pointsRef = useRef<THREE.Points>(null)
+  const progressRef = useRef(0)
+
+  const { geometry, phases } = useMemo(() => {
     const positions = new Float32Array(PARTICLE_COUNT * 3)
     const phases = new Float32Array(PARTICLE_COUNT)
     const twinklePhases = new Float32Array(PARTICLE_COUNT)
@@ -35,7 +40,8 @@ export function ParticleField() {
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
     geometry.setAttribute('aSize', new THREE.BufferAttribute(sizes, 1))
     geometry.setAttribute('aBrightness', new THREE.BufferAttribute(brightness, 1))
-    return { geometry, phases, twinklePhases }
+    geometry.setAttribute('aTwinklePhase', new THREE.BufferAttribute(twinklePhases, 1))
+    return { geometry, phases }
   }, [])
 
   const material = useMemo(
@@ -49,14 +55,17 @@ export function ParticleField() {
           uPresenceCenter: { value: PRESENCE_CENTER },
           uPresenceStrength: { value: 0.42 },
           uOrbitStrength: { value: 0.12 },
+          uPresenceProgress: { value: 0 },
           uTime: { value: 0 },
         },
         vertexShader: `
           attribute float aSize;
           attribute float aBrightness;
+          attribute float aTwinklePhase;
           uniform vec3 uPresenceCenter;
           uniform float uPresenceStrength;
           uniform float uOrbitStrength;
+          uniform float uPresenceProgress;
           uniform float uTime;
           varying float vBrightness;
 
@@ -71,36 +80,37 @@ export function ParticleField() {
             vec3 fromPresence = position - uPresenceCenter;
             float distanceToPresence = length(fromPresence);
 
-            // Mael is felt first as a gravitational absence. The field bends
-            // around an unresolved center instead of revealing an object.
             float influence = 1.0 - smoothstep(1.5, 16.5, distanceToPresence);
             float orbitalZone = 1.0 - smoothstep(2.0, 11.5, distanceToPresence);
             float coreVoid = 1.0 - smoothstep(1.8, 4.8, distanceToPresence);
 
+            // The field responds before the presence itself is revealed.
+            float response = smoothstep(0.0, 0.38, uPresenceProgress);
+            float awareness = smoothstep(0.28, 0.78, uPresenceProgress);
+            float intensity = response * (0.78 + awareness * 0.22);
             vec3 radial = normalize(fromPresence + vec3(0.0001));
 
-            // Nearby stars accelerate into curved paths around the presence.
-            float orbitAngle = uTime * 0.12 * influence * orbitalZone;
+            // Nearby stars accelerate into curved paths around the unseen presence.
+            float orbitAngle = uTime * 0.12 * influence * orbitalZone * intensity;
             vec2 orbitXZ = rotate(orbitAngle) * fromPresence.xz;
             vec3 orbitalPosition = vec3(orbitXZ.x, fromPresence.y, orbitXZ.y) + uPresenceCenter;
 
-            // Pull the surrounding field inward, but preserve a dark center.
-            // The resulting negative space makes the unseen mass readable.
-            displaced = mix(displaced, orbitalPosition, influence * 0.72);
-            displaced -= radial * influence * uPresenceStrength * 0.72;
+            displaced = mix(displaced, orbitalPosition, influence * 0.72 * intensity);
+            displaced -= radial * influence * uPresenceStrength * 0.72 * intensity;
             displaced += radial * coreVoid * 0.62;
 
-            // Add a subtle second-order arc so the field does not read as a
-            // simple radial vortex or a visible ring.
             vec3 tangent = normalize(vec3(-fromPresence.z, 0.0, fromPresence.x) + vec3(0.0001));
-            displaced += tangent * influence * orbitalZone * uOrbitStrength * 2.2;
+            displaced += tangent * influence * orbitalZone * uOrbitStrength * 2.2 * intensity;
 
             vec4 mvPosition = modelViewMatrix * vec4(displaced, 1.0);
             gl_Position = projectionMatrix * mvPosition;
 
             float depthScale = 70.0 / max(-mvPosition.z, 1.0);
             gl_PointSize = max(0.65, aSize * depthScale);
-            vBrightness = aBrightness;
+
+            // Awareness is felt as a restrained shimmer, never a sparkle effect.
+            float twinkle = sin(uTime * 0.72 + aTwinklePhase) * 0.5 + 0.5;
+            vBrightness = aBrightness * (1.0 + twinkle * 0.075 * awareness);
           }
         `,
         fragmentShader: `
@@ -127,7 +137,11 @@ export function ParticleField() {
     if (!points) return
 
     const elapsed = clock.getElapsedTime()
+    const targetProgress = THREE.MathUtils.clamp(presenceProgress, 0, 1)
+    progressRef.current = THREE.MathUtils.lerp(progressRef.current, targetProgress, 0.045)
+
     material.uniforms.uTime.value = elapsed
+    material.uniforms.uPresenceProgress.value = progressRef.current
     points.rotation.y = elapsed * 0.0035
     points.rotation.x = Math.sin(elapsed * 0.04) * 0.012
 
