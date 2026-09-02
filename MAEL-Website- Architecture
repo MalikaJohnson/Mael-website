@@ -1,0 +1,709 @@
+**The website is a cinematic experience built with 3D—not a 3D demo that happens to be a website.**
+
+## 1. Architectural Philosophy
+
+The Mael website should feel like entering a living system rather than navigating a conventional product website.
+
+The visual language is built around:
+
+- cosmic scale
+- gravitational movement
+- particles
+- light
+- depth
+- distortion
+- controlled emergence
+- cinematic transitions
+- Mael as a persistent presence within the environment
+
+However, visual complexity must not be confused with technical complexity.
+The implementation should use real-time 3D only where 3D produces a meaningful experiential benefit.
+Everything else should be achieved through the simplest rendering technique capable of producing the intended visual result.
+
+** Use 3D where depth, perspective, spatial interaction, or physical behavior matters. Fake it where perception is sufficient. **
+
+## 2. Rendering Stack
+
+*Primary Framework*
+
+React + TypeScript
+
+React will manage:
+
+- application structure
+- page composition
+- UI components
+- accessibility
+- responsive states
+- content
+- interaction state
+- integration between DOM and 3D layers
+
+TypeScript will provide explicit contracts between the visual system, animation system, and application state.
+
+*3D Rendering*
+
+Three.js + React Three Fiber
+
+React Three Fiber will provide the primary interface for the WebGL environment.
+
+Three.js should be treated as the visual substrate, not the entire application.
+
+The architecture should allow:
+
+React Application
+│
+├── DOM / UI Layer
+│
+├── Cinematic Controller
+│
+├── GSAP Timeline
+│
+└── R3F Scene
+    │
+    ├── Mael
+    ├── Horizon
+    ├── Particle Field
+    ├── Lighting
+    └── Camera
+
+This separation allows the cinematic experience to remain controllable without forcing every interaction through the 3D engine.
+
+## 3. Rendering Strategy
+
+The website will use a hybrid rendering model.
+
+Layer 1 — DOM
+
+Used for:
+
+- navigation
+- typography
+- product messaging
+- buttons
+- accessibility
+- semantic content
+- interactive controls
+- fallback experiences
+
+Layer 2 — WebGL
+
+Used for:
+
+- Mael
+- Horizon
+- spatial particles
+- volumetric-looking environments
+- camera movement
+- gravitational distortion
+- 3D interactions
+
+Layer 3 — CSS / Canvas / Shader Effects
+
+Used where full 3D geometry is unnecessary.
+
+Examples:
+
+- atmospheric glow
+- gradients
+- screen-space effects
+- subtle light blooms
+- background transitions
+- interface illumination
+
+## 4. What Is Actually 3D?
+
+*Real 3D*
+
+The following elements benefit substantially from actual 3D:
+
+Mael
+
+Mael exists as a spatial entity.
+
+His movement, orientation, depth, emergence, and relationship to the Horizon should feel physically grounded.
+
+Decision: Hybrid 3D.
+
+Mael should combine:
+
+- procedural geometry
+- shader-based surface treatment
+- particle systems
+- emissive lighting
+- atmospheric effects
+
+He does not need to be a traditional high-poly character model.
+
+*Horizon*
+
+The Horizon is one of the primary reasons to use Three.js.
+
+It should have:
+
+- actual spatial geometry
+- depth
+- perspective
+- curvature
+- light interaction
+- distortion
+- particle interaction
+
+Decision: Real 3D + shaders.
+
+The Horizon should feel less like an object floating on a webpage and more like a gravitational boundary existing in space.
+
+*Particle Field*
+
+The star field and cosmic dust should exist in 3D space.
+
+Particles should respond to:
+
+- camera movement
+- scroll progression
+- proximity to Mael
+- Horizon movement
+- scene transitions
+
+Decision: GPU/WebGL particle system.
+
+The particle field should be highly optimized and use instancing/buffer-based rendering rather than thousands of individual React objects.
+
+## 5. What Does NOT Need 3D?
+
+Not everything needs geometry.
+
+The following should generally remain DOM/CSS:
+
+- typography
+- headings
+- navigation
+- buttons
+- product descriptions
+- feature cards
+- accessibility controls
+- legal/content sections
+- conventional UI
+
+## 6. Mael Representation
+
+Mael should not initially be treated as a conventional humanoid character.
+
+His visual identity is closer to an emergent intelligence.
+
+The representation should therefore be modular.
+
+Mael
+│
+├── Core Geometry
+├── Particle Envelope
+├── Shader Surface
+├── Emission / Light
+├── Atmospheric Field
+└── Motion Controller
+
+*Geometry*
+
+Low-to-moderate complexity procedural geometry.
+
+The geometry provides:
+
+- silhouette
+- volume
+- spatial presence
+
+It does not need to carry the entire visual identity.
+
+*Shader*
+
+The shader provides much of the perceived complexity.
+
+Potential effects include:
+
+- flowing surface movement
+- internal energy
+- subtle iridescence
+- transparency
+- emissive regions
+- gravitational response
+- depth-based fading
+
+*Particles*
+
+Particles can create the impression that Mael is partially constructed from the surrounding environment.
+This also allows Mael to transition between:
+
+environment → entity → environment
+
+without requiring a complicated character rig.
+
+## 7. Horizon Architecture
+
+The Horizon should be treated as a visual system, not a single mesh.
+
+Horizon
+│
+├── Base Geometry
+├── Light Ring / Boundary
+├── Distortion Field
+├── Shader Layer
+├── Particle Interaction
+└── Atmospheric Glow
+
+The geometry establishes the spatial boundary.
+Shaders create the illusion of extreme energy.
+Post-processing and lighting provide the visual intensity.
+Particles communicate its influence on the surrounding environment.
+
+*Important*
+
+The Horizon does not need to be a scientifically accurate black hole.
+
+It needs to be visually coherent with the metaphor:
+
+A boundary between what is known and what is about to be understood.
+
+## 8. Particle System
+
+The particle environment should use WebGL-native structures rather than React-managed particles.
+
+Preferred architecture:
+
+GPU
+│
+├── Position Buffer
+├── Velocity / Motion Data
+├── Size
+├── Opacity
+└── Shader
+
+Particles should be capable of participating in multiple behaviors without being recreated between scenes.
+The same particle field can transition from:
+
+background stars → cosmic dust → gravitational flow → environmental field
+
+through changes in shader uniforms and motion parameters.
+This is significantly cheaper than destroying and rebuilding the particle system for every scene.
+
+## 9. Camera
+
+The camera is one of the primary storytelling mechanisms.
+
+*Type*
+
+Perspective camera
+
+The scene should have genuine spatial depth rather than looking like a flat orthographic composition.
+
+*Camera Position*
+
+Camera distance should be dynamically controlled based on:
+
+- viewport size
+- scene
+- Mael position
+- Horizon scale
+- device performance
+
+*Camera Movement*
+
+Movement should be subtle and intentional.
+
+Potential behaviors:
+
+- forward drift
+- orbital movement
+- lateral displacement
+- depth transition
+- focus shift
+- gravitational pull
+
+The camera should never feel like the user is controlling a game camera.
+
+It should feel as though the viewer is being carried through the environment.
+
+## 10. Scroll as Cinematic Input
+
+Scroll should not simply reveal sections.
+It should control the progression of the cinematic timeline.
+
+Conceptually:
+
+Scroll Position
+      ↓
+Normalized Progress
+      ↓
+Master Timeline
+      ↓
+┌─────────┬──────────┬──────────┬──────────┐
+│ Scene 1 │ Scene 2  │ Scene 3  │ Scene 4  │
+└─────────┴──────────┴──────────┴──────────┘
+      ↓
+Camera / Mael / Horizon / Particles / UI
+
+GSAP will act as the orchestration layer.
+Individual systems should expose controllable properties rather than implementing independent scroll logic everywhere.
+
+For example:
+
+mael.position
+mael.rotation
+mael.energy
+horizon.scale
+horizon.intensity
+camera.position
+particles.density
+particles.velocity
+
+The timeline controls these properties.
+
+## 11. Motion Architecture
+
+GSAP will manage cinematic sequencing.
+The animation architecture should distinguish between:
+
+*Continuous animation*
+
+Things that exist independently of scroll:
+
+- particle movement
+- subtle Mael motion
+- atmospheric movement
+- shader animation
+
+*Timeline animation*
+
+Things controlled by cinematic progression:
+
+- camera movement
+- Mael emergence
+- Horizon expansion
+- scene transitions
+- typography
+- product reveal
+
+*Interaction animation*
+
+Things caused by user interaction:
+
+- pointer response
+- hover
+- navigation
+- interface feedback
+
+These should not become tangled together.
+
+## 12. Performance Architecture
+
+Performance should be treated as a design constraint from the beginning.
+
+*Desktop*
+
+Target:
+
+- high particle density
+- full shader effects
+- high-resolution rendering
+- complete cinematic experience
+
+*Laptop*
+
+Target:
+
+- reduced render resolution where necessary
+- moderate particle density
+- reduced post-processing
+- full core experience
+
+*Mobile*
+
+Mobile should not simply receive the desktop scene scaled down.
+Instead, the system should intentionally simplify:
+
+- particle count
+- shader complexity
+- render resolution
+- distortion
+- post-processing
+- camera movement
+
+The narrative remains intact even when the rendering complexity changes.
+
+## 13. Device Capability Tiers
+
+Instead of thinking only in terms of desktop/mobile, the renderer should think in terms of capability.
+
+*Tier A — Full*
+
+High-end desktop/laptop.
+Full cinematic rendering.
+
+*Tier B — Standard*
+
+Typical laptop/tablet.
+Reduced particles and effects.
+
+*Tier C — Constrained*
+
+Mobile / low-power hardware.
+Simplified 3D scene.
+
+*Tier D — Fallback*
+
+WebGL unavailable or performance unacceptable.
+DOM/CSS/canvas cinematic representation.
+
+The user should still experience Mael.
+
+They simply experience a different rendering implementation.
+
+## 14. Reduced Motion
+
+prefers-reduced-motion must be respected.
+
+When enabled:
+
+- remove large camera movements
+- reduce particle velocity
+- eliminate aggressive distortion
+- minimize scroll-driven movement
+- shorten transitions
+- maintain scene state without requiring animation
+
+The narrative should remain understandable without cinematic motion.
+
+**Motion enhances the story. Motion must never be required to understand it.**
+
+## 15. Fallback Architecture
+
+The site should have an explicit fallback hierarchy.
+
+Can WebGL run?
+      │
+      ├── Yes
+      │    ↓
+      │  Determine capability
+      │    ↓
+      │  Full / Reduced Scene
+      │
+      └── No
+           ↓
+       Cinematic DOM/CSS fallback
+
+The fallback should not look like a broken version of the website.
+
+It should be an intentionally designed experience.
+
+Possible fallback techniques:
+
+- CSS gradients
+- CSS animations
+- static/animated imagery
+- lightweight canvas
+- DOM-based transitions
+- simplified Mael representation
+
+## 16. Loading Strategy
+
+The initial page should not immediately download the entire universe.
+
+The application should prioritize:
+
+- critical HTML
+- typography
+- initial visual environment
+- first cinematic scene
+- Mael assets
+- additional scene resources
+- secondary effects
+
+Heavy assets should be lazy-loaded wherever possible.
+The user should see something beautiful before everything has finished loading.
+
+## 17. Asset Strategy
+
+Prefer procedural generation where it meaningfully reduces asset weight.
+
+Use generated geometry/shaders for:
+
+- particles
+- atmospheric fields
+- Horizon effects
+- Mael surface effects
+- lighting phenomena
+
+Use external assets only where they provide something procedural rendering cannot efficiently provide.
+
+The goal is to keep the site visually rich while maintaining a relatively small asset footprint.
+
+## 18. React ↔ WebGL Boundary
+
+React should not attempt to control every frame.
+
+Bad:
+
+React state
+   ↓
+every particle
+   ↓
+every frame
+
+Preferred:
+
+React
+ ↓
+Scene configuration
+ ↓
+R3F
+ ↓
+GPU
+
+React controls what the scene should be.
+The render loop controls how the scene behaves every frame.
+This distinction is critical for performance.
+
+## 19. Scene Architecture
+
+The cinematic experience should be divided into scene states rather than separate pages.
+
+Example:
+
+Scene 01 — Arrival
+Scene 02 — Recognition
+Scene 03 — Mael Emergence
+Scene 04 — The Horizon
+Scene 05 — Understanding
+Scene 06 — Product
+Scene 07 — Invitation
+
+Each scene exposes a predictable interface:
+
+enter()
+update(progress)
+exit()
+
+The master timeline determines when each scene becomes active.
+This allows the visual choreography to evolve without rewriting the underlying rendering architecture.
+
+## 20. The Golden Rule
+
+Engineering should repeatedly ask:
+
+Does this need to exist in 3D?
+
+If the answer is no, don't put it in 3D.
+A convincing illusion rendered with a shader is often better than an expensive mesh.
+A CSS glow is better than a volumetric light if the visitor cannot perceive the difference.
+A DOM heading is better than a 3D text mesh.
+A 2D transition is better than a particle simulation if the visual result is identical.
+Three.js is a means, not the aesthetic.
+
+## 21. Target Architecture
+
+The final architecture should conceptually resemble:
+
+                         MAEL WEBSITE
+                              │
+                    ┌─────────┴─────────┐
+                    │                   │
+                 React                GSAP
+                    │                   │
+             Application State     Master Timeline
+                    │                   │
+                    └─────────┬─────────┘
+                              │
+                         R3F / Three.js
+                              │
+              ┌───────────────┼────────────────┐
+              │               │                │
+            Mael           Horizon         Particles
+              │               │                │
+              └───────────────┼────────────────┘
+                              │
+                           Camera
+                              │
+                              ↓
+                            WebGL
+                              │
+                         GPU Rendering
+
+With DOM/UI existing alongside the WebGL layer rather than inside it.
+
+## 22. Architectural Objective
+
+The final system should achieve something deceptively simple:
+
+The visitor should feel like they are moving through a living cosmic environment.
+
+They should not feel:
+
+- like they are navigating a 3D demo
+- like they are watching a loading screen
+- like their laptop is fighting for its life
+- like the website is trying to prove how much WebGL it can render
+
+The technology should disappear.
+What remains is the experience.
+Mael should feel inevitable.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
