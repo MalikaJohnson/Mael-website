@@ -1,6 +1,7 @@
 import { Canvas } from '@react-three/fiber'
 import { Camera } from './Camera'
 import { Lighting } from './Lighting'
+import { ParticleField } from '../particles/ParticleField'
 
 export function CinematicCanvas() {
   return (
@@ -13,6 +14,7 @@ export function CinematicCanvas() {
         <color attach="background" args={['#000000']} />
         <Camera />
         <Lighting />
+        <ParticleField />
       </Canvas>
     </div>
   )
