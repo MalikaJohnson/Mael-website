@@ -3,6 +3,7 @@ import { Camera } from './Camera'
 import { Lighting } from './Lighting'
 import { ParticleField } from '../particles/ParticleField'
 import { MaelPresence } from '../mael/MaelPresence'
+import { Horizon } from '../horizon/Horizon'
 
 interface CinematicCanvasProps {
   presenceProgress?: number
@@ -17,9 +18,10 @@ export function CinematicCanvas({ presenceProgress = 0 }: CinematicCanvasProps) 
         camera={{ position: [0, 0, 10], fov: 45, near: 0.1, far: 2000 }}
       >
         <color attach="background" args={['#000000']} />
-        <Camera />
+        <Camera presenceProgress={presenceProgress} />
         <Lighting />
         <ParticleField presenceProgress={presenceProgress} />
+        <Horizon progress={presenceProgress} />
         <MaelPresence />
       </Canvas>
     </div>
