@@ -6,82 +6,84 @@ interface HorizonProps {
   progress?: number
 }
 
+type HorizonFragment = {
+  geometry: THREE.BufferGeometry
+  material: THREE.LineBasicMaterial
+  phase: number
+  strength: number
+}
+
 export function Horizon({ progress = 0 }: HorizonProps) {
-  const lineRef = useRef<THREE.Line>(null)
-  const glowRef = useRef<THREE.Line>(null)
+  const groupRef = useRef<THREE.Group>(null)
 
-  const geometry = useMemo(() => {
-    const points: THREE.Vector3[] = []
-    const segments = 192
+  const fragments = useMemo<HorizonFragment[]>(() => {
+    const fragmentSpecs = [
+      { start: 0.12, length: 0.32, phase: 0.7, strength: 0.9 },
+      { start: 1.18, length: 0.22, phase: 2.4, strength: 0.52 },
+      { start: 2.02, length: 0.38, phase: 4.1, strength: 0.72 },
+      { start: 3.32, length: 0.18, phase: 1.6, strength: 0.38 },
+      { start: 4.08, length: 0.28, phase: 5.2, strength: 0.64 },
+      { start: 5.28, length: 0.24, phase: 3.3, strength: 0.48 },
+    ]
 
-    for (let i = 0; i <= segments; i += 1) {
-      const angle = (i / segments) * Math.PI * 2
-      const irregularity =
-        1 +
-        Math.sin(angle * 3.0 + 0.8) * 0.025 +
-        Math.sin(angle * 7.0 - 0.4) * 0.012
-      const radius = 3.35 * irregularity
-      points.push(
-        new THREE.Vector3(
-          Math.cos(angle) * radius,
-          Math.sin(angle) * radius * 0.38,
-          -7.5 + Math.sin(angle * 2.0) * 0.08,
-        ),
-      )
-    }
+    return fragmentSpecs.map(({ start, length, phase, strength }) => {
+      const points: THREE.Vector3[] = []
+      const segments = 28
 
-    const geometry = new THREE.BufferGeometry().setFromPoints(points)
-    return geometry
+      for (let i = 0; i <= segments; i += 1) {
+        const t = i / segments
+        const angle = start + t * length
+        const wave =
+          Math.sin(angle * 2.7 + phase) * 0.055 +
+          Math.sin(angle * 6.1 - phase * 0.7) * 0.025
+        const radius = 3.35 + wave
+        const vertical = 0.38 + Math.sin(angle * 2.2 + phase) * 0.035
+
+        points.push(
+          new THREE.Vector3(
+            Math.cos(angle) * radius,
+            Math.sin(angle) * radius * vertical,
+            -7.5 + Math.sin(angle * 1.7 + phase) * 0.11,
+          ),
+        )
+      }
+
+      const geometry = new THREE.BufferGeometry().setFromPoints(points)
+      const material = new THREE.LineBasicMaterial({
+        color: new THREE.Color('#b59a62'),
+        transparent: true,
+        opacity: 0,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false,
+      })
+
+      return { geometry, material, phase, strength }
+    })
   }, [])
-
-  const material = useMemo(
-    () =>
-      new THREE.LineBasicMaterial({
-        color: new THREE.Color('#c7a86b'),
-        transparent: true,
-        opacity: 0,
-        blending: THREE.AdditiveBlending,
-        depthWrite: false,
-      }),
-    [],
-  )
-
-  const glowMaterial = useMemo(
-    () =>
-      new THREE.LineBasicMaterial({
-        color: new THREE.Color('#80663b'),
-        transparent: true,
-        opacity: 0,
-        blending: THREE.AdditiveBlending,
-        depthWrite: false,
-      }),
-    [],
-  )
 
   useFrame(({ clock }) => {
     const target = THREE.MathUtils.clamp(progress, 0, 1)
-    const emergence = THREE.MathUtils.smoothstep(target, 0.18, 0.7)
-    const breathing = Math.sin(clock.getElapsedTime() * 0.28) * 0.018
+    const emergence = THREE.MathUtils.smoothstep(target, 0.2, 0.72)
+    const time = clock.getElapsedTime()
 
-    material.opacity = THREE.MathUtils.lerp(material.opacity, emergence * 0.42, 0.035)
-    glowMaterial.opacity = THREE.MathUtils.lerp(glowMaterial.opacity, emergence * 0.11, 0.035)
-
-    if (lineRef.current) {
-      lineRef.current.rotation.z = breathing
-      lineRef.current.rotation.y = Math.sin(clock.getElapsedTime() * 0.12) * 0.012
+    if (groupRef.current) {
+      groupRef.current.rotation.z = Math.sin(time * 0.23) * 0.012
+      groupRef.current.rotation.y = Math.sin(time * 0.11) * 0.018
+      groupRef.current.position.x = Math.sin(time * 0.17) * 0.012
     }
 
-    if (glowRef.current) {
-      glowRef.current.rotation.z = breathing
-      glowRef.current.rotation.y = Math.sin(clock.getElapsedTime() * 0.12) * 0.012
-      glowRef.current.scale.setScalar(1.018)
-    }
+    fragments.forEach(({ material, phase, strength }) => {
+      const shimmer = 0.72 + Math.sin(time * 0.46 + phase) * 0.28
+      const targetOpacity = emergence * 0.17 * strength * shimmer
+      material.opacity = THREE.MathUtils.lerp(material.opacity, targetOpacity, 0.045)
+    })
   })
 
   return (
-    <group>
-      <line ref={glowRef} geometry={geometry} material={glowMaterial} />
-      <line ref={lineRef} geometry={geometry} material={material} />
+    <group ref={groupRef}>
+      {fragments.map(({ geometry, material }, index) => (
+        <line key={index} geometry={geometry} material={material} />
+      ))}
     </group>
   )
 }
