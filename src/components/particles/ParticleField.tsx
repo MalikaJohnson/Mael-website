@@ -4,6 +4,7 @@ import * as THREE from 'three'
 
 const PARTICLE_COUNT = 2200
 const PRESENCE_CENTER = new THREE.Vector3(0, -0.9, -7.5)
+const HORIZON_CENTER = new THREE.Vector3(0, 0, -7.5)
 
 interface ParticleFieldProps {
   presenceProgress?: number
@@ -53,8 +54,10 @@ export function ParticleField({ presenceProgress = 0 }: ParticleFieldProps) {
         uniforms: {
           uPixelRatio: { value: Math.min(window.devicePixelRatio, 2) },
           uPresenceCenter: { value: PRESENCE_CENTER },
+          uHorizonCenter: { value: HORIZON_CENTER },
           uPresenceStrength: { value: 0.42 },
           uOrbitStrength: { value: 0.12 },
+          uBoundaryStrength: { value: 0.16 },
           uPresenceProgress: { value: 0 },
           uTime: { value: 0 },
         },
@@ -63,8 +66,10 @@ export function ParticleField({ presenceProgress = 0 }: ParticleFieldProps) {
           attribute float aBrightness;
           attribute float aTwinklePhase;
           uniform vec3 uPresenceCenter;
+          uniform vec3 uHorizonCenter;
           uniform float uPresenceStrength;
           uniform float uOrbitStrength;
+          uniform float uBoundaryStrength;
           uniform float uPresenceProgress;
           uniform float uTime;
           varying float vBrightness;
@@ -101,6 +106,25 @@ export function ParticleField({ presenceProgress = 0 }: ParticleFieldProps) {
 
             vec3 tangent = normalize(vec3(-fromPresence.z, 0.0, fromPresence.x) + vec3(0.0001));
             displaced += tangent * influence * orbitalZone * uOrbitStrength * 2.2 * intensity;
+
+            // The Horizon is not a ring the stars sit on; it is a boundary that changes
+            // their trajectories. Particles passing near its plane are gently deflected.
+            vec3 fromHorizon = displaced - uHorizonCenter;
+            float horizonDepth = 1.0 - smoothstep(0.18, 1.9, abs(fromHorizon.z));
+            vec2 normalizedHorizon = vec2(fromHorizon.x / 3.35, fromHorizon.y / 1.28);
+            float ellipseRadius = length(normalizedHorizon);
+            float boundaryBand = 1.0 - smoothstep(0.10, 0.72, abs(ellipseRadius - 1.0));
+            float boundaryResponse = boundaryBand * horizonDepth * smoothstep(0.20, 0.72, uPresenceProgress);
+
+            vec2 ellipseNormal = normalize(normalizedHorizon + vec2(0.0001));
+            vec2 ellipseTangent = normalize(vec2(-ellipseNormal.y, ellipseNormal.x) + vec2(0.0001));
+            float boundaryDrift = sin(uTime * 0.38 + ellipseRadius * 5.0) * 0.5 + 0.5;
+
+            // A small sideways drift plus a slight push through depth makes the boundary
+            // visible through behavior rather than a drawn outline.
+            displaced.xy += ellipseTangent * boundaryResponse * (0.12 + boundaryDrift * 0.08);
+            displaced.xy += ellipseNormal * boundaryResponse * 0.045;
+            displaced.z += boundaryResponse * sin(uTime * 0.42 + position.x * 0.17) * uBoundaryStrength;
 
             vec4 mvPosition = modelViewMatrix * vec4(displaced, 1.0);
             gl_Position = projectionMatrix * mvPosition;
